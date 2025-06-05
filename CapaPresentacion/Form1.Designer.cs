@@ -43,42 +43,44 @@
             lblRetirar = new Button();
             lblSaldo = new Label();
             txtSaldoActual = new TextBox();
-            cmbTipo = new ComboBox();
             btnLimpiar = new Button();
-            btnAgregar = new Button();
+            label1 = new Label();
+            txtTipo = new TextBox();
+            dgvCuentas = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvCuentas).BeginInit();
             SuspendLayout();
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(135, 49);
+            lblId.Location = new Point(102, 290);
             lblId.Name = "lblId";
             lblId.Size = new Size(24, 20);
             lblId.TabIndex = 0;
             lblId.Text = "ID";
-            lblId.Click += lblId_Click;
             // 
             // txtId
             // 
-            txtId.Location = new Point(186, 46);
+            txtId.Location = new Point(134, 287);
             txtId.Name = "txtId";
-            txtId.Size = new Size(197, 27);
+            txtId.Size = new Size(285, 27);
             txtId.TabIndex = 1;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(404, 45);
+            btnBuscar.BackColor = SystemColors.Window;
+            btnBuscar.Location = new Point(425, 287);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(109, 28);
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(116, 96);
+            lblNombre.Location = new Point(22, 345);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(64, 20);
             lblNombre.TabIndex = 3;
@@ -87,7 +89,7 @@
             // lblNumCuenta
             // 
             lblNumCuenta.AutoSize = true;
-            lblNumCuenta.Location = new Point(126, 152);
+            lblNumCuenta.Location = new Point(302, 345);
             lblNumCuenta.Name = "lblNumCuenta";
             lblNumCuenta.Size = new Size(55, 20);
             lblNumCuenta.TabIndex = 4;
@@ -96,7 +98,7 @@
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(126, 204);
+            lblTipo.Location = new Point(197, 402);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(39, 20);
             lblTipo.TabIndex = 5;
@@ -105,7 +107,7 @@
             // lblMonto
             // 
             lblMonto.AutoSize = true;
-            lblMonto.Location = new Point(64, 261);
+            lblMonto.Location = new Point(78, 466);
             lblMonto.Name = "lblMonto";
             lblMonto.Size = new Size(53, 20);
             lblMonto.TabIndex = 6;
@@ -113,28 +115,30 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(187, 96);
+            txtNombre.Location = new Point(92, 342);
             txtNombre.Name = "txtNombre";
+            txtNombre.ReadOnly = true;
             txtNombre.Size = new Size(196, 27);
             txtNombre.TabIndex = 7;
             // 
             // txtCuenta
             // 
-            txtCuenta.Location = new Point(187, 145);
+            txtCuenta.Location = new Point(363, 342);
             txtCuenta.Name = "txtCuenta";
+            txtCuenta.ReadOnly = true;
             txtCuenta.Size = new Size(196, 27);
             txtCuenta.TabIndex = 8;
             // 
             // txtMonto
             // 
-            txtMonto.Location = new Point(135, 258);
+            txtMonto.Location = new Point(148, 459);
             txtMonto.Name = "txtMonto";
             txtMonto.Size = new Size(307, 27);
             txtMonto.TabIndex = 10;
             // 
             // btnDepositar
             // 
-            btnDepositar.Location = new Point(126, 305);
+            btnDepositar.Location = new Point(134, 492);
             btnDepositar.Name = "btnDepositar";
             btnDepositar.Size = new Size(94, 29);
             btnDepositar.TabIndex = 12;
@@ -144,7 +148,7 @@
             // 
             // lblConsultar
             // 
-            lblConsultar.Location = new Point(364, 305);
+            lblConsultar.Location = new Point(373, 492);
             lblConsultar.Name = "lblConsultar";
             lblConsultar.Size = new Size(94, 29);
             lblConsultar.TabIndex = 13;
@@ -154,7 +158,7 @@
             // 
             // lblRetirar
             // 
-            lblRetirar.Location = new Point(247, 305);
+            lblRetirar.Location = new Point(253, 492);
             lblRetirar.Name = "lblRetirar";
             lblRetirar.Size = new Size(94, 29);
             lblRetirar.TabIndex = 14;
@@ -165,7 +169,7 @@
             // lblSaldo
             // 
             lblSaldo.AutoSize = true;
-            lblSaldo.Location = new Point(24, 362);
+            lblSaldo.Location = new Point(253, 544);
             lblSaldo.Name = "lblSaldo";
             lblSaldo.Size = new Size(93, 20);
             lblSaldo.TabIndex = 15;
@@ -173,47 +177,59 @@
             // 
             // txtSaldoActual
             // 
-            txtSaldoActual.Location = new Point(126, 359);
+            txtSaldoActual.Location = new Point(128, 583);
             txtSaldoActual.Name = "txtSaldoActual";
+            txtSaldoActual.ReadOnly = true;
             txtSaldoActual.Size = new Size(353, 27);
             txtSaldoActual.TabIndex = 16;
             // 
-            // cmbTipo
-            // 
-            cmbTipo.FormattingEnabled = true;
-            cmbTipo.Location = new Point(186, 201);
-            cmbTipo.Name = "cmbTipo";
-            cmbTipo.Size = new Size(197, 28);
-            cmbTipo.TabIndex = 17;
-            // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(404, 96);
+            btnLimpiar.Location = new Point(248, 631);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(109, 29);
+            btnLimpiar.Size = new Size(109, 33);
             btnLimpiar.TabIndex = 18;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // btnAgregar
+            // label1
             // 
-            btnAgregar.Location = new Point(23, 46);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
-            btnAgregar.TabIndex = 19;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(166, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(289, 53);
+            label1.TabIndex = 19;
+            label1.Text = "Banco Eurux";
+            // 
+            // txtTipo
+            // 
+            txtTipo.Location = new Point(242, 399);
+            txtTipo.Name = "txtTipo";
+            txtTipo.ReadOnly = true;
+            txtTipo.Size = new Size(124, 27);
+            txtTipo.TabIndex = 20;
+            // 
+            // dgvCuentas
+            // 
+            dgvCuentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCuentas.Location = new Point(148, 79);
+            dgvCuentas.Name = "dgvCuentas";
+            dgvCuentas.ReadOnly = true;
+            dgvCuentas.RowHeadersWidth = 51;
+            dgvCuentas.Size = new Size(333, 188);
+            dgvCuentas.TabIndex = 21;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(553, 422);
-            Controls.Add(btnAgregar);
+            ClientSize = new Size(639, 702);
+            Controls.Add(dgvCuentas);
+            Controls.Add(txtTipo);
+            Controls.Add(label1);
             Controls.Add(btnLimpiar);
-            Controls.Add(cmbTipo);
             Controls.Add(txtSaldoActual);
             Controls.Add(lblSaldo);
             Controls.Add(lblRetirar);
@@ -231,8 +247,9 @@
             Controls.Add(lblId);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
-            Text = "Form1";
+            Text = "SISTEMA BANCARIO";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCuentas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,13 +266,14 @@
         private TextBox txtNombre;
         private TextBox txtCuenta;
         private TextBox txtMonto;
-        private ComboBox cmbTipo;
         private Button btnDepositar;
         private Button lblConsultar;
         private Button lblRetirar;
         private Label lblSaldo;
         private TextBox txtSaldoActual;
         private Button btnLimpiar;
-        private Button btnAgregar;
+        private Label label1;
+        private TextBox txtTipo;
+        private DataGridView dgvCuentas;
     }
 }
